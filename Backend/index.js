@@ -2,6 +2,7 @@
 const express = require("express");
 const connectDB = require("./database");
 
+
 // Initialization
 const app = express()
 
