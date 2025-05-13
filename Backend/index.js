@@ -1,23 +1,33 @@
-// Importations
 const express = require("express");
 const connectDB = require("./database");
+const cors = require("cors");
+const adminRouter = require("./routes/admin.route");
+const userRouter = require("./routes/user.route");
 
 
-// Initialization
-const app = express()
+
+const app = express();
+
+// Apply middlewares first
+app.use(cors({
+  origin: 'http://localhost:5173'
+}));
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
+
+// Then use routes
+app.use("/admin", adminRouter);
+app.use("/user", userRouter);
 
 // Connect to MongoDB
 connectDB();
 
-//Malware
-
-
-// Port to start 
-PORT = 5000;
-app.listen(PORT, (err)=>{
-    if (err){
-        console.log(err)
-    }else{
-        console.log(`Application is listening at port ${PORT}`)
-    }
+// Start server
+const PORT = 5000;
+app.listen(PORT, (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(`Application is listening at port ${PORT}`);
+  }
 });

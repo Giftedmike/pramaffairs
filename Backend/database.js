@@ -1,12 +1,12 @@
 // Importations
 const mongoose = require("mongoose");
+const dotenv = require("dotenv").config();
 
 // Connection to mongoDB
-URI =
-  "mongodb+srv://michaelpatrickorg:Bram111555@cluster0.dfplhsl.mongodb.net/pramaffairs_database?retryWrites=true&w=majority&appName=Cluster0";
+
 const connectDB = () => {
   return mongoose
-    .connect(URI)
+    .connect(process.env.URI)
     .then(() => {
       console.log("Database connected successfully");
     })

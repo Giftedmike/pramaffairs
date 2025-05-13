@@ -1,5 +1,6 @@
 // Importations
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 
 // database schema
 const user_signupSchema = mongoose.Schema({
@@ -9,5 +10,21 @@ const user_signupSchema = mongoose.Schema({
   password: { type: String, Required: true },
 });
 
+let saltRound = 10;
+user_signupSchema.pre("save", function (next) {
+  const user = this;
+
+  bcrypt.hash(user.password, saltRound, (err, hashedpassword) => {
+    if (err) {
+      console.log(err);
+      return next(err); 
+    }
+    user.password = hashedpassword;
+    next(); 
+  });
+});
+
+
 // database model and export
-module.exports = mongoose.model("user_signup", user_signupSchema);
+let userModel = mongoose.model("user_signup", user_signupSchema);
+module.exports = userModel;
