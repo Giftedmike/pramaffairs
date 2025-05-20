@@ -6,11 +6,36 @@ const registerAdmin = (req, res) => {
   form
     .save()
     .then(() => {
-      res.send({status:true,message:"Data saved successfully"});
+      res.send({ status: true, message: "Data saved successfully" });
     })
     .catch((err) => {
-      res.send({status:false,message:"Data not saved successfully"});
+      res.send({ status: false, message: "Data not saved successfully" });
     });
 };
 
-module.exports = { registerAdmin };
+// user validation using email and password
+const signInAdmin = (req, res) => {
+  console.log(req.body);
+  adminModel
+    .findOne({ email: req.body.email })
+    .then((response) => {
+      console.log(response)
+      if(response){
+        console.log("Email exist")
+        response.validatePassword(req.body.password, (err,same)=>{
+          if(same){
+            res.send({status:true, message:"Signed in successfully"})
+          }else{
+            res.send({status:false, message:"invalid credentials"})
+          }
+        })
+      }else{
+        res.send({status:true, message:"Invalid credentials"})
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+module.exports = { registerAdmin, signInAdmin };

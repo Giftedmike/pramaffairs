@@ -6,7 +6,7 @@ import { useState } from "react";
 const AdminSignUp = () => {
     const [aMessage, setaMssage] = useState("");
     const navigate = useNavigate();
-  let URL = "http://localhost:5000/admin/signup";
+  let URL = "http://localhost:5000/admin/adminsignup";
   let formik = useFormik({
     initialValues: {
       firstname: "",

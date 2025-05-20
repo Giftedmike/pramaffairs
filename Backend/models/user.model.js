@@ -24,6 +24,17 @@ user_signupSchema.pre("save", function (next) {
   });
 });
 
+// Validating user password
+user_signupSchema.methods.validatePassword = function (password, callback) {
+  bcrypt.compare(password, this.password, (err, same) => {
+    if (!err) {
+      callback(err, same);
+    } else {
+      next();
+    }
+  });
+};
+
 
 // database model and export
 let userModel = mongoose.model("user_signup", user_signupSchema);

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const UserSignUp = () => {
   const navigate = useNavigate();
   const [uMessage, setuMessage] = useState("");
-  let URL = "http://localhost:5000/user/signup";
+  let URL = "http://localhost:5000/user/usersignup";
 
   let formik = useFormik({
     initialValues: {
