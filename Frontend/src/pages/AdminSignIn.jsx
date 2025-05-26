@@ -18,7 +18,9 @@ const AdminSignIn = () => {
         .then((response) => {
           console.log(response);
           if (response.data.status) {
-            navigate("/dashboard");
+            localStorage.token = response.data.token
+            console.log("Navigating to dashboard");
+            navigate("/admindashboard");
           } else {
             console.log(response.data.message);
             setuMessage(response.data.message);

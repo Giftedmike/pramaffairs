@@ -1,4 +1,5 @@
 const userModel = require("../models/user.model");
+const jwt = require("jsonwebtoken")
 
 const registerUser = (req, res) => {
   console.log(req.body);
@@ -24,7 +25,11 @@ const signInUser = (req, res) => {
         console.log("Email exist")
         response.validatePassword(req.body.password, (err,same)=>{
           if(same){
-            res.send({status:true, message:"Signed in successfully"})
+            // Protected route using jwt
+            let secret = process.env.SECRET
+            let token = jwt.sign({email:req.body.email}, secret,{expiresIn:"1h"})
+            console.log(token)
+            res.send({status:true, message:"Signed in successfully", token})
           }else{
             res.send({status:false, message:"invalid credentials"})
           }
@@ -38,4 +43,23 @@ const signInUser = (req, res) => {
     });
 };
 
-module.exports = { registerUser, signInUser };
+function verifyToken(req, res, next) {
+  const authHeader = req.headers['authorization'];
+
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return res.status(401).json({ message: 'Access denied. No token provided.' });
+  }
+
+  const token = authHeader.split(' ')[1];
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = decoded;
+    next();
+  } catch (err) {
+    return res.status(400).json({ message: 'Invalid token.' });
+  }
+}
+
+
+module.exports = { registerUser, signInUser, verifyToken };

@@ -7,21 +7,23 @@ import AdminSignUp from './pages/AdminSignUp';
 import AdminSignIn from './pages/AdminSignIn';
 import UserSignUp from './pages/UserSignUp';
 import UserSignIn from './pages/UserSignIn';
-import Dashboard from './pages/Dashboard'
+import Dashboard from './pages/Dashboard';
+import AdminDashboard from './pages/AdminDashboard';
 
 
 function App() {
-  
+  let token = localStorage.getItem("token")
 
   return (
     <>
       <Routes>
-        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/dashboard' element={token? <Dashboard/> : <Navigate to="/userSignIn" />} />
+        <Route path='/admindashboard' element={token? <AdminDashboard/> : <Navigate to="/adminSignIn" />} />
         <Route path='/adminSignUp' element={<AdminSignUp/>} />
         <Route path='/adminSignIn' element={<AdminSignIn/>} />
         <Route path='/userSignUp' element={<UserSignUp/>} />
         <Route path='/userSignIn' element={<UserSignIn />} />
-        <Route path='/' element={<Navigate to="UserSignIn" />} />
+        <Route path='/' element={<Navigate to="/userSignIn" />} />
         <Route path='/checkout' element={<Checkout/>} />
       </Routes>
     </>

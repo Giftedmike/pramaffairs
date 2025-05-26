@@ -4,29 +4,31 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const UserSignIn = () => {
-    let URL = "http://localhost:5000/user/usersignin";
-    const navigate = useNavigate();
-    const [uMessage, setuMessage] = useState("")
+  let URL = "http://localhost:5000/user/usersignin";
+  const navigate = useNavigate();
+  const [uMessage, setuMessage] = useState("");
   let formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     onSubmit: (values) => {
-        axios
+      axios
         .post(URL, values)
-        .then((response)=>{
-            console.log(response);
+        .then((response) => {
+          console.log(response);
           if (response.data.status) {
+            localStorage.token = response.data.token
+            console.log("Navigating to dashboard");
             navigate("/dashboard");
           } else {
             console.log(response.data.message);
             setuMessage(response.data.message);
           }
         })
-        .catch((err)=>{
-            console.log(err)
-        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   });
   return (
@@ -52,10 +54,11 @@ const UserSignIn = () => {
                 value={formik.values.password}
                 className="form-control py-2"
               />
-              <button type="submit" className="btn btn-success w-100 py2 my-2">
-                {uMessage && <p className="text-danger mt-2">{uMessage}</p>}
+              <button type="submit" className="btn btn-success w-100 py-2 my-2">
+                
                 Sign In
               </button>
+              {uMessage && <p className="text-danger mt-2">{uMessage}</p>}
             </form>
           </div>
         </div>

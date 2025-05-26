@@ -95,3 +95,12 @@ span.price {
     margin-bottom: 20px;
   }
 }
+
+.counter {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+}
+.navbar {
+  background-color: #245FAB;
+}
