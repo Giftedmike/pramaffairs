@@ -6,6 +6,8 @@ import Counter from "../components/Counter";
 import Product from "../components/Product";
 import Category from "../components/Category";
 import Footer from "../components/Footer";
+import Pricing from "../components/Pricing";
+import Contact from "./Contact";
 
 const Dashboard = () => {
   const [message, setMessage] = useState("");
@@ -40,7 +42,10 @@ const Dashboard = () => {
       <Counter />
       <Product />
       <Category />
+      <Pricing />
+      <Contact />
       <Footer />
+      
     </>
   );
 };

@@ -2,12 +2,12 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div>
+    <div className="text-center bg-secondary text-white">
       <footer>
         <p>
-          Author: Hege Refsnes
+          Author: Pramaffairs Enterprises
           <br />
-          <a href="mailto:hege@example.com">hege@example.com</a>
+          <p>CopyRight ©  2025. All Rights Reserved</p>
         </p>
       </footer>
     </div>

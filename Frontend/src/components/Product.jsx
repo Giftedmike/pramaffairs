@@ -4,7 +4,7 @@ const Product = () => {
   return (
     <>
       <div className="container mt-3 text-center justify-content-center align-item-center">
-        <h3 className="text-center py-3">Popular Products</h3> <hr />
+        <h3 className="text-center py-3">Choose From Our Sample Products</h3> <hr />
         <div className="row ">
           <div className="col-12 col-sm-3 mb-3 ps-2">
             <div className="card" style={{ width: "18rem" }}>
