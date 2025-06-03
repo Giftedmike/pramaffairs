@@ -53,7 +53,7 @@ const Contact = () => {
                   Chat on WhatsApp
                 </a></p>
 
-                <p>Call Us: +44 7598251832</p>
+                <p>Call Us: +234 8065653265</p>
     
               </div>
             </div>

@@ -7,7 +7,7 @@ const NavBar = () => {
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container mt-3">
           <a className="navbar-brand me-auto" href="#">
-            pram <span className="text-warning fw-bold bg-warning">|</span>  STORE
+            pram <span className="text-primary fw-bold bg-primary">|</span>  STORE
           </a>
           <button
             className="navbar-toggler"

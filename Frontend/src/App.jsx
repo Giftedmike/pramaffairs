@@ -9,6 +9,7 @@ import UserSignUp from './pages/UserSignUp';
 import UserSignIn from './pages/UserSignIn';
 import Dashboard from './pages/Dashboard';
 import AdminDashboard from './pages/AdminDashboard';
+import Samples from './pages/Samples';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path='/userSignIn' element={<UserSignIn />} />
         <Route path='/' element={<Navigate to="/userSignIn" />} />
         <Route path='/checkout' element={<Checkout/>} />
+        <Route path='/samples' element={<Samples/>} />
       </Routes>
     </>
   )
