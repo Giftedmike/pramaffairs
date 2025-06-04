@@ -15,7 +15,7 @@ const Pricing = () => {
                 <p className="card-text bg-dark text-light fs-4 fw-bolder text-decoration-line-through"> #150,000</p>
                 <p className="card-text">NOW <span className="fs-2 fw-bolder">#99,999</span> </p>
                
-                <a href="#" className="btn btn-primary">
+                <a href="/order" target="_blank" className="btn btn-primary">
                   ORDER NOW
                 </a>
               </div>
@@ -32,7 +32,7 @@ const Pricing = () => {
               <div className="card-body">
                 <p className="card-text bg-dark text-light fs-4 fw-bolder text-decoration-line-through"> #200,000</p>
                 <p className="card-text">NOW <span className="fs-2 fw-bolder">#149,999</span> </p>
-                <a href="#" className="btn btn-primary">
+                <a href="/order" target="_blank" className="btn btn-primary">
                   ORDER NOW
                 </a>
               </div>
@@ -49,7 +49,7 @@ const Pricing = () => {
               <div className="card-body">
                 <p className="card-text bg-dark text-light fs-4 fw-bolder text-decoration-line-through"> #500,000</p>
                 <p className="card-text ">FROM <span className="fs-2 fw-bolder">#300,000</span> </p>
-                <a href="#" className="btn btn-primary">
+                <a href="/order" target="_blank" className="btn btn-primary">
                   ORDER NOW
                 </a>
               </div>

@@ -1,7 +1,7 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import Checkout from './pages/Checkout';
+import Checkout from './components/Checkout';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import AdminSignUp from './pages/AdminSignUp';
 import AdminSignIn from './pages/AdminSignIn';
@@ -9,7 +9,8 @@ import UserSignUp from './pages/UserSignUp';
 import UserSignIn from './pages/UserSignIn';
 import Dashboard from './pages/Dashboard';
 import AdminDashboard from './pages/AdminDashboard';
-import Samples from './pages/Samples';
+import Samples from './components/Samples';
+import Order from './components/Order';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path='/' element={<Navigate to="/userSignIn" />} />
         <Route path='/checkout' element={<Checkout/>} />
         <Route path='/samples' element={<Samples/>} />
+        <Route path='/order' element={<Order/>} />
       </Routes>
     </>
   )

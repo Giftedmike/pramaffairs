@@ -7,7 +7,7 @@ import Product from "../components/Product";
 import Category from "../components/Category";
 import Footer from "../components/Footer";
 import Pricing from "../components/Pricing";
-import Contact from "./Contact";
+import Contact from "../components/Contact";
 
 const Dashboard = () => {
   const [message, setMessage] = useState("");
