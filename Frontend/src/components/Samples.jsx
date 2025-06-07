@@ -1,12 +1,12 @@
 import React from "react";
-import NavBar from "../components/NavBar";
+// import NavBar from "../components/NavBar";
 
 const Samples = () => {
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <div className="container mt-3 text-center justify-content-center align-item-center">
-        <h3 className="text-center py-3">Choose From Our Sample designs</h3>{" "}
+        <h3 className="text-center py-3">See Sample designs</h3>{" "}
         <hr />
         <div className="row ">
           <div className="col-12 col-sm-3 mb-3 ps-2">

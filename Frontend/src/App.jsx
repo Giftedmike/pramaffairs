@@ -11,6 +11,7 @@ import Dashboard from './pages/Dashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import Samples from './components/Samples';
 import Order from './components/Order';
+import Modal from './components/modal';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path='/checkout' element={<Checkout/>} />
         <Route path='/samples' element={<Samples/>} />
         <Route path='/order' element={<Order/>} />
+        <Route path="/modal" element={<Modal />} />
       </Routes>
     </>
   )

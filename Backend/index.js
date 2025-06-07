@@ -3,6 +3,7 @@ const connectDB = require("./database");
 const cors = require("cors");
 const adminRouter = require("./routes/admin.route");
 const userRouter = require("./routes/user.route");
+const orderRouter = require("./routes/order.route");
 
 
 
@@ -18,6 +19,9 @@ app.use(express.json());
 // Then use routes
 app.use("/admin", adminRouter);
 app.use("/user", userRouter);
+app.post("/order", orderRouter);
+  
+  
 
 // Connect to MongoDB
 connectDB();

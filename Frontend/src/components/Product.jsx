@@ -1,4 +1,5 @@
 import React from "react";
+import Samples from "./Samples";
 
 const Product = () => {
   return (
@@ -66,6 +67,7 @@ const Product = () => {
           
         </div>
       </div>
+      <Samples />
     </>
   );
 };
