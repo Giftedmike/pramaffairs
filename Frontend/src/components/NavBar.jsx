@@ -4,7 +4,7 @@ const NavBar = () => {
   return (
     <>
       {/* <div className="container-fluid"> */}
-      <nav className="navbar navbar-expand-lg navbar-light">
+      <nav className="navbar navbar-expand-lg navbar-light" id="banner">
         <div className="container mt-3">
           <a className="navbar-brand me-auto" href="#banner">
             pram <span className="text-primary fw-bold bg-primary">|</span>  DESIGN

@@ -5,6 +5,7 @@ const cors = require("cors");
 const adminRouter = require("./routes/admin.route");
 const userRouter = require("./routes/user.route");
 const orderRouter = require("./routes/order.route");
+const prodRouter = require("./routes/product.route");
 
 
 
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use("/admin", adminRouter);
 app.use("/user", userRouter);
 app.post("/order", orderRouter);
+app.post("/product", prodRouter);
   
   
 

@@ -12,6 +12,7 @@ import AdminDashboard from './pages/AdminDashboard';
 import Samples from './components/Samples';
 import Order from './components/Order';
 import SuccessOrder from './components/SuccessOrder';
+import SalesNotifications from './components/SalesNotifications';
 
 
 
@@ -21,16 +22,17 @@ function App() {
 
   return (
     <>
-    
+    <SalesNotifications />
       <Routes>
         
-        <Route path='/dashboard' element={token? <Dashboard/> : <Navigate to="/userSignIn" />} />
+        {/* <Route path='/dashboard' element={token? <Dashboard/> : <Navigate to="/userSignIn" />} /> */}
         <Route path='/admindashboard' element={token? <AdminDashboard/> : <Navigate to="/adminSignIn" />} />
         <Route path='/adminSignUp' element={<AdminSignUp/>} />
         <Route path='/adminSignIn' element={<AdminSignIn/>} />
         <Route path='/userSignUp' element={<UserSignUp/>} />
         <Route path='/userSignIn' element={<UserSignIn />} />
-        <Route path='/' element={<Navigate to="/userSignIn" />} />
+        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/' element={<Navigate to="/dashboard" />} />
         <Route path='/checkout' element={<Checkout/>} />
         <Route path='/samples' element={<Samples/>} />
         <Route path='/order' element={<Order/>} />

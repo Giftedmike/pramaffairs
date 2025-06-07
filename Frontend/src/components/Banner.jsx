@@ -3,7 +3,7 @@ import React from "react";
 export const Banner = () => {
   return (
     <>
-      <div className="container bg-light mt-3" id="banner">
+      <div className="container bg-light mt-3">
         <div className="row">
           {/* First column: hidden on small screens (col-sm-0 and d-none) */}
           <div className="col-lg-4 col-md-4 d-none d-md-block ps-2"> 
