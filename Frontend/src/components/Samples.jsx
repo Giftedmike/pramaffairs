@@ -1,8 +1,10 @@
 import React from "react";
+import NavBar from "../components/NavBar";
 
 const Samples = () => {
   return (
     <div>
+      <NavBar />
       <div className="container mt-3 text-center justify-content-center align-item-center">
         <h3 className="text-center py-3">Choose From Our Sample designs</h3>{" "}
         <hr />

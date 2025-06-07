@@ -1,8 +1,10 @@
 import React from "react";
+import NavBar from "../components/NavBar";
 
 const Order = () => {
   return (
     <div >
+      <NavBar />
       <div className=" mt-5 mb-5">
         <div className="row justify-content-center">
           <div className="col-md-6 bg-light form-container">
