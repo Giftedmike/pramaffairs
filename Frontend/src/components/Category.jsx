@@ -2,7 +2,7 @@ import React from "react";
 
 const Category = () => {
   return (
-    <div className="mt-4" style={{ backgroundColor: "#245FAB" }}>
+    <div className="mt-4" style={{ backgroundColor: "#245FAB" }} id="about">
       <div className="container mt-3 text-center justify-content-center align-item-center">
         <h3 className="text-center py-3">About Products</h3> <hr />
         <div className="row ">

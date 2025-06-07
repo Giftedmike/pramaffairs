@@ -11,7 +11,9 @@ import Dashboard from './pages/Dashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import Samples from './components/Samples';
 import Order from './components/Order';
-import Modal from './components/modal';
+import SuccessOrder from './components/SuccessOrder';
+
+
 
 
 function App() {
@@ -19,7 +21,9 @@ function App() {
 
   return (
     <>
+    
       <Routes>
+        
         <Route path='/dashboard' element={token? <Dashboard/> : <Navigate to="/userSignIn" />} />
         <Route path='/admindashboard' element={token? <AdminDashboard/> : <Navigate to="/adminSignIn" />} />
         <Route path='/adminSignUp' element={<AdminSignUp/>} />
@@ -30,7 +34,7 @@ function App() {
         <Route path='/checkout' element={<Checkout/>} />
         <Route path='/samples' element={<Samples/>} />
         <Route path='/order' element={<Order/>} />
-        <Route path="/modal" element={<Modal />} />
+        <Route path='/successOrder' element={<SuccessOrder/>} />
       </Routes>
     </>
   )

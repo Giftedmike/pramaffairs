@@ -7,7 +7,7 @@ const Footer = () => {
         <p>
           Author: Pramaffairs Enterprises
           <br />
-          <p>CopyRight ©  2025. All Rights Reserved</p>
+          CopyRight ©  2025. All Rights Reserved
         </p>
       </footer>
     </div>

@@ -1,6 +1,7 @@
+require("dotenv").config();
 const orderModel = require("../models/order.model");
 const nodemailer = require("nodemailer");
-const dotenv = require("dotenv").config();
+
 
 // Setup your nodemailer transporter
 const transporter = nodemailer.createTransport({
@@ -21,20 +22,62 @@ const orderProduct = (req, res) => {
 
       const mailOptions = {
         from: process.env.MAIL,
-        to: req.body.email, // Send email to the customer
+        to: `${req.body.email}, pramaffairs@gmail.com`,  // sends to customer and your internal team
         subject: "Product Order Successful",
-        text: `Dear Customer,
+        html: `
+  <p>Dear Customer,</p>
 
-                Thank you for placing an order with us. This email confirms your successful order for the "${req.body.packageType}" website design package.
+  <p>
+    Thank you for placing an order with us. This email confirms your successful order for the 
+    <strong>${req.body.packageType} website design package</strong>.
+  </p>
 
-                We appreciate your trust in our services and are excited to work with you on bringing your vision to life. A member of our team will contact you shortly to discuss next steps and project details.
+  <p>
+    We appreciate your trust in our services and are excited to work with you on bringing your vision to life. 
+    
+  </p>
+  
+  <p>
+  A member of our team will contact you shortly to discuss next steps and project details.
+  </>
 
-                If you have any questions or need assistance, feel free to reply to this email or reach us at pramaffairs@gmail.com.
+  <table style="border:1px solid #ccc; width: 100%; max-width: 600px; border-radius: 8px; padding: 16px; font-family: Arial, sans-serif;">
+    <tr>
+      <td>
+        <h3 style="margin: 0 0 10px 0;">Payment Details</h3>
+        <p><strong>Account Name:</strong> Pramaffairs Enterprices</p>
+        <p><strong>Account Number:</strong> 2032337730</p>
+        <p><strong>Bank Name:</strong> First Bank</p>
+        <p><strong>Account Type:</strong> Current Account</p>
+      </td>
+    </tr>
+  </table>
 
-                Thank you for choosing us.
+  <table style="border:1px solid #ccc; width: 100%; max-width: 600px; border-radius: 8px; padding: 16px; font-family: Arial, sans-serif;">
+    <tr>
+      <td>
+        <h3 style="margin: 0 0 10px 0;">Order Summary</h3>
+        <p><strong>Package:</strong> ${req.body.packageType}</p>
+        <p><strong>Name:</strong> ${req.body.entityName}</p>
+        <p><strong>Email:</strong> ${req.body.email}</p>
+        <p><strong>Phone:</strong> ${req.body.phone}</p>
+        <p><strong>Address:</strong> ${req.body.address}</p>
+      </td>
+    </tr>
+  </table>
 
-                Best regards,  
-                The Pram | DESIGN Team`,
+  <p>
+    If you have any questions or need assistance, feel free to reply to this email or reach us at 
+    <a href="mailto:pramaffairs@gmail.com">pramaffairs@gmail.com</a>.
+  </p>
+
+  <p>
+    Thank you for choosing us.
+  </p>
+
+  <p>Best regards,<br/>
+  The Pram | DESIGN Team</p>
+`,
       };
 
       transporter.sendMail(mailOptions, (error, info) => {

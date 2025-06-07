@@ -34,7 +34,7 @@ const Order = () => {
       .then((response) => {
         console.log(response);
         if (response.data.status) {
-          navigate("/modal"); // navigate to modal or success screen
+          navigate("/successOrder"); // navigate to modal or success screen
         } else {
           setMessage(response.data.message || "Something went wrong.");
         }
@@ -53,7 +53,7 @@ const Order = () => {
       <div className="mt-5 mb-5">
         <div className="row justify-content-center">
           <div className="col-md-6 bg-light form-container">
-            <h1 className="mb-4 text-center pt-4 text-success">WEBSITE DESIGN</h1>
+            <h1 className="mb-4 text-center pt-4 text-success">WEBSITE DESIGN</h1> <hr />
             <h2 className="mb-4 text-center">Customer Order Form</h2>
 
             {message && <div className="alert alert-warning">{message}</div>}
@@ -70,9 +70,9 @@ const Order = () => {
                   required
                 >
                   <option value="" disabled>Select one</option>
-                  <option value="basic">Basic Package - #99,999</option>
-                  <option value="standard">Standard Package - #149,999</option>
-                  <option value="pro">Pro Package - #300,000</option>
+                  <option value="basic #99,999">Basic Package - #99,999</option>
+                  <option value="standard #149,999">Standard Package - #149,999</option>
+                  <option value="pro #300,000">Pro Package - #300,000</option>
                 </select>
               </div>
 
@@ -101,7 +101,7 @@ const Order = () => {
                   type="text"
                   className="form-control"
                   id="entityName"
-                  placeholder="Enter name"
+                  placeholder="Enter Business or Hospital or School name"
                   value={entityName}
                   onChange={(e) => setEntityName(e.target.value)}
                   required
@@ -124,12 +124,12 @@ const Order = () => {
 
               {/* Organization Nature */}
               <div className="mb-3">
-                <label htmlFor="typeInput" className="form-label">Organization Nature</label>
+                <label htmlFor="typeInput" className="form-label">Organization or Work Nature</label>
                 <input
                   type="text"
                   className="form-control"
                   id="typeInput"
-                  placeholder="e.g. Business or School"
+                  placeholder="e.g. Private/Specialist Hospital or Primary/Secondary School or Restaurant/Boutique/Spare Parts/Mecahnic/Painter etc"
                   value={organizationNature}
                   onChange={(e) => setOrganizationNature(e.target.value)}
                   required
@@ -164,7 +164,7 @@ const Order = () => {
                 />
               </div>
 
-              <button type="submit" className="btn btn-primary mb-5">
+              <button type="submit" className="btn btn-success mb-5">
                 Submit
               </button>
             </form>

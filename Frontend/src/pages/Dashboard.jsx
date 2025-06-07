@@ -8,6 +8,7 @@ import Category from "../components/Category";
 import Footer from "../components/Footer";
 import Pricing from "../components/Pricing";
 import Contact from "../components/Contact";
+import SideBar from '../components/SideBar';
 
 const Dashboard = () => {
   const [message, setMessage] = useState("");
@@ -37,6 +38,7 @@ const Dashboard = () => {
 
   return (
     <>
+    <SideBar />
       <NavBar />
       <Banner />
       <Counter />

@@ -3,7 +3,7 @@ import React from "react";
 const Pricing = () => {
   return (
     <div>
-      <div className="container mt-3 text-center justify-content-center align-item-center">
+      <div className="container mt-3 text-center justify-content-center align-item-center" id="pricing">
         <h3 className="text-center py-3">Choose Your Pricing Plan</h3> <hr />
         <div className="row ">
           <div className="col-12 col-sm-4 mb-4 ps-2">

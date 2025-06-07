@@ -3,14 +3,16 @@ const mongoose = require("mongoose");
 
 // database schema
 const orderSchema = mongoose.Schema({
-  packageprice: { type: String, Required: true },
-  packagetype: { type: Number, Required: true },
-  name: { type: Number, Required: true },
-  officeaddress: { type: String, Required: true },
-  orgnature: { type: String, Required: true },
-  phoneno: { type: String, Required: true },
+  packageType: { type: String, Required: true },
+  entityType: { type: String, Required: true },
+  entityName: { type: String, Required: true },
+  address: { type: String, Required: true },
+  organizationNature: { type: String, Required: true },
+  phone: { type: Number, Required: true },
   email: { type: String, Required: true },
 });
+
+
 
 // database model and export
 module.exports = mongoose.model("order", orderSchema);
